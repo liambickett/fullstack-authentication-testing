@@ -10,7 +10,7 @@ import passport from 'passport';
 import './models/User.js';
 import './services/passport.js';
 
-const { googleKeys, mongoURI, cookieKey } = useKeys();
+const { mongoURI, cookieKey } = useKeys();
 
 //////// Mongoose Connect /////////
 mongoose.connect(mongoURI);
