@@ -1,5 +1,5 @@
-import { cookieKeysDev, googleKeysDev, mongoURIDev } from './dev.js';
-import { cookieKey, googleKeys, mongoURI } from './prod.js';
+// import { cookieKeysDev, googleKeysDev, mongoURIDev } from './dev.js';
+// import { cookieKey, googleKeys, mongoURI } from './prod.js';
 
 export function useKeys() {
   if (process.env.NODE_ENV === 'production') {
@@ -13,9 +13,9 @@ export function useKeys() {
     };
   } else {
     return {
-      googleKeys: googleKeysDev,
-      mongoURI: mongoURIDev,
-      cookieKey: cookieKeysDev,
+      // googleKeys: googleKeysDev,
+      // mongoURI: mongoURIDev,
+      // cookieKey: cookieKeysDev,
     };
   }
 }
