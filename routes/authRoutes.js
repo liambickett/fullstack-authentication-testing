@@ -8,7 +8,13 @@ export const authRoutes = (app) => {
     })
   );
 
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.send(req.user);
+    }
+  );
 
   app.get('/api/logout', (req, res) => {
     req.logout();
