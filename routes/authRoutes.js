@@ -12,16 +12,18 @@ export const authRoutes = (app) => {
     '/auth/google/callback',
     passport.authenticate('google'),
     (req, res) => {
-      res.send(req.user);
+      res.redirect('/dashboard');
     }
   );
 
-  app.get('/api/logout', (req, res) => {
+  app.get('/auth/logout', (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect('/');
+    console.log('logout request');
   });
 
   app.get('/api/auth_user', (req, res) => {
+    console.log(req.user);
     res.send(req.user);
   });
 };
